@@ -5,8 +5,8 @@ const { RtcTokenBuilder, RtcRole } = require("agora-access-token");
 const app = express();
 app.use(cors());
 
-const APP_ID = "89b8d047e07446108b52738ce92d98ec";
-const APP_CERTIFICATE = "df9216d732a540d880de37b958414a2d";
+const APP_ID = process.env.APP_ID;
+const APP_CERTIFICATE = process.env.APP_CERTIFICATE;
 
 app.get("/rtc-token", (req, res) => {
   const channelName = req.query.channel;
